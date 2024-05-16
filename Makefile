@@ -13,7 +13,7 @@ MANDIR = $(PREFIX)/share/man/man1
 LDFLAGS = $(shell pkg-config --libs)
 CFLAGS = -O3 -march=native -mtune=native -pipe -g -std=c99 -pedantic -Wall -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600 $(shell pkg-config --cflags)
 
-SRC = slr.c
+SRC = slr.c lexer.c
 
 $(TARGET): $(SRC)
 	$(CC) $(SRC) -o $@ $(CFLAGS) $(LDFLAGS)

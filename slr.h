@@ -13,4 +13,8 @@ typedef struct {
   char *value;
 } Token;
 
+void print_token(Token token);
+Token *generate_number(char *current, int *current_index);
+Token *generate_keyword(char *current, int *current_index);
+
 #endif
