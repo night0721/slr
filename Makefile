@@ -4,7 +4,7 @@
 CC = cc
 VERSION = 1.0
 TARGET = slr
-MANPAGE = slr.1
+MANPAGE = $(TARGET).1
 PREFIX ?= /usr/local
 BINDIR = $(PREFIX)/bin
 MANDIR = $(PREFIX)/share/man/man1
