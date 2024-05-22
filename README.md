@@ -1,6 +1,17 @@
 # S Lang Runtime
-
 S Lang(Slang) Runtime is a interpreter for Slang.
+
+# Usage
+
+# Depedencies
+None
+
+# Building
+You will need to run these with elevated privilages.
+```
+$ make
+# make install
+```
 
 # Contributions
 Contributions are welcomed, feel free to open a pull request.
