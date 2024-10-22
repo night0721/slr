@@ -1,7 +1,6 @@
 .POSIX:
 .SUFFIXES:
 
-CC = cc
 VERSION = 1.0
 TARGET = slr
 MANPAGE = $(TARGET).1
@@ -9,14 +8,12 @@ PREFIX ?= /usr/local
 BINDIR = $(PREFIX)/bin
 MANDIR = $(PREFIX)/share/man/man1
 
-# Flags
-LDFLAGS = 
-CFLAGS = -O3 -march=native -mtune=native -pipe -s -std=c99 -pedantic -Wall -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600
+CFLAGS = -O3 -march=native -mtune=native -pipe -s -std=c99 -pedantic -Wall
 
 SRC = slr.c lexer.c parser.c
 
 $(TARGET): $(SRC)
-	$(CC) $(SRC) -o $@ $(CFLAGS) $(LDFLAGS)
+	$(CC) $(SRC) -o $@ $(CFLAGS)
 
 dist:
 	mkdir -p $(TARGET)-$(VERSION)
@@ -34,11 +31,11 @@ install: $(TARGET)
 	chmod 644 $(DESTDIR)$(MANDIR)/$(MANPAGE)
 
 uninstall:
-	$(RM) $(DESTDIR)$(BINDIR)/$(TARGET)
-	$(RM) $(DESTDIR)$(MANDIR)/$(MANPAGE)
+	rm $(DESTDIR)$(BINDIR)/$(TARGET)
+	rm $(DESTDIR)$(MANDIR)/$(MANPAGE)
 
 clean:
-	$(RM) $(TARGET)
+	rm $(TARGET)
 
 all: $(TARGET)
 
