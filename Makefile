@@ -6,7 +6,7 @@ TARGET = slr
 PREFIX ?= /usr/local
 BINDIR = $(PREFIX)/bin
 
-CFLAGS = -O3 -march=native -mtune=native -pipe -s -std=c99 -pedantic -Wall
+CFLAGS = -Os -march=native -mtune=native -pipe -s -std=c99 -pedantic -Wall -D_DEFAULT_SOURCE
 
 SRC = slr.c lexer.c parser.c
 
